@@ -7,18 +7,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import java.io.IOException;
-import java.util.concurrent.Executors;
+import java.io.InputStream;
 
 /**
  * @author Sylvester Das
  * @since 4/22/2018.
  */
 public class Initialize {
-    private final Logger log = LogManager.getRootLogger();
+    private static final Logger log = LogManager.getRootLogger();
+    private static InputStream log4jProperties =
+            Initialize.class.getResourceAsStream("/property/log4j.properties");
 
-    public static void test(String[] args) {
+    public static void main(String[] args) {
         try {
-            PropertyConfigurator.configure(Initialize.class.getResourceAsStream("/log4j.properties"));
+            PropertyConfigurator.configure(log4jProperties);
             Appender appender = new FileAppender(new SimpleLayout(), "log4j.log", true);
             BasicConfigurator.configure(appender);
 
@@ -26,16 +28,16 @@ public class Initialize {
             driver.get("http://www.google.com");
 
             System.out.println("Title of the page is: " + driver.getTitle());
-//            log.info(driver.getTitle());
+            log.info(driver.getTitle());
 
             WebElement search = driver.findElement(By.name("q"));
             search.sendKeys("Sylvester Das");
             search.submit();
 
-//            log.info(driver.getTitle());
+            log.info(driver.getTitle());
             System.out.println("Title of the page now is: " + driver.getTitle());
         } catch (IOException e) {
-//            log.error(e.getLocalizedMessage(), e.getCause());
+            log.error(e.getLocalizedMessage(), e.getCause());
         }
     }
 }
