@@ -1,4 +1,4 @@
-package in.httprequest.gradle_test;
+package in.httprequest.gradle_test.ui;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -51,7 +51,7 @@ public class LoginManager {
     private void showMainView(String sessionID) {
         try {
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/layouts/mainview.fxml")
+                    getClass().getResource("/layouts/main_view.fxml")
             );
             scene.setRoot(loader.load());
             MainViewController controller = loader.getController();

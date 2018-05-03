@@ -1,4 +1,4 @@
-package in.httprequest.gradle_test;
+package in.httprequest.gradle_test.test;
 
 import org.apache.log4j.*;
 import org.openqa.selenium.By;

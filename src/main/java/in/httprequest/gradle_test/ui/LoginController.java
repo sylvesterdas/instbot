@@ -1,4 +1,4 @@
-package in.httprequest.gradle_test;
+package in.httprequest.gradle_test.ui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

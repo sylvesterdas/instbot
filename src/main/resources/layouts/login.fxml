@@ -3,7 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<StackPane prefWidth="231.0" xmlns:fx="http://javafx.com/fxml" fx:controller="in.httprequest.gradle_test.LoginController">
+<StackPane prefWidth="231.0" xmlns:fx="http://javafx.com/fxml" fx:controller="in.httprequest.gradle_test.ui.LoginController">
     <children>
         <StackPane>
             <children>
